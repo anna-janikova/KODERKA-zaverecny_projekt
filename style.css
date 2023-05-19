@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/*hlavička*/
 .nav-menu {
   display: flex;
   justify-content: center;
@@ -29,4 +31,57 @@
   .nav-item {
     margin: 5px 0;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*index - main section*/
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main__image {
+  margin-bottom: 1rem;
+}
+.main__image-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+.main__content {
+  text-align: center;
+}
+.main__content-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.main__content-text {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/*Galerie*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+.gallery__item-img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
