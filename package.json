@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve"
-  },  
+  },
   "keywords": [],
   "author": "Anna Janíková",
   "license": "ISC",
