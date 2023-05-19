@@ -1,39 +1,68 @@
 
 /*hlavička*/
 
-.nav-menu {
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    
+    img {
+      max-width: 100px;
+      height: auto;
+    }
+  }
+  
+  .nav-menu {
     display: flex;
     justify-content: center;
-    background-color: #f2f2f2;
+    flex-grow: 1;
+    
+    &__list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      &__item {
+        margin: 0 10px;
+        
+        a {
+          text-decoration: none;
+          color: #333333;
+          padding: 10px;
+        }
+      }
+    }
   }
   
-  .nav-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-item {
-    margin: 0 10px;
-  }
-  
-  .nav-item a {
-    text-decoration: none;
-    color: #333333;
-    padding: 10px;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .nav-list {
-      flex-direction: column;
-      align-items: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    
+    &__logo {
+      margin-bottom: 10px;
     }
     
-    .nav-item {
-      margin: 5px 0;
+    .nav-menu {
+      flex-direction: column;
+      
+      &__list {
+        justify-content: center;
+        
+        &__item {
+          margin: 5px 0;
+        }
+      }
     }
   }
+}
+
   
   /*index - main section*/
 
