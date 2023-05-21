@@ -1,19 +1,21 @@
- $default-font: "Montserrat", sans-serif;
- $deafult_font-family: 'Taviraj', serif;
  $primary_background_color: white;
  $primary_font-size: 11px;
+ $primary_spacer: 1rem;
+ $primary_box_shaodw: 6px 6px 20px 0px rgba(0,0,0,0.3);
+ $primary_font_family:'Montserrat', sans-serif;
 
 .body {
   background-image: url(/photos/platno_vzorek_maly.jpg);
-  font-family: $deafult_font-family;
-  font-size:$primary_font-size;
   margin: 0;
+  font-family: $primary_font_family;
 }
  .all-wrapper {
   background-color: $primary_background_color;
+  padding: $primary_spacer;
+  box-shadow: $primary_box_shaodw;
   
    @media screen and (min-width: 1024px) {
-     width: 850px;
+     width: 50%;
      margin: auto;
 
    }
@@ -106,6 +108,7 @@
 
    &__content {
      text-align: center;
+     max-width: 400px;
 
      &-heading {
        font-size: 2rem;
@@ -114,7 +117,6 @@
      }
 
      &-text {
-       font-size: 1.2rem;
        color: #555;
      }
    }
@@ -125,7 +127,7 @@
  .gallery {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-   grid-gap: 0.2em;
+   grid-gap: 1%;
 
    &__item {
      overflow: hidden;
@@ -156,6 +158,30 @@
      grid-template-columns: repeat(3, 1fr);
    }
  }
+
+ //O mě
+ .photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  &__item {
+    flex-basis: calc(33.33% - 10px); /* Pro tři obrázky vedle sebe pro tablety */
+    margin-bottom: 20px;
+    
+    @media (max-width: 768px) { /* Pro mobilní zařízení */
+      flex-basis: 100%; /* Obrázky budou pod sebou */
+    }
+    
+    @media (min-width: 1024px) { /* Pro počítače */
+
+    }
+  }
+  
+  &__image {
+    width: 100%;
+  }
+}
 
  //Formulář
  .form {
@@ -201,3 +227,31 @@
      margin-right: 0;
    }
  }
+
+ //Patička
+ .footer {
+  background-image: url("/photos/paticka.jpg");
+  color:white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+}
+
+.footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer__left,
+.footer__right {
+  flex-basis: 50%;
+}
+
+@media (max-width: 768px) {
+  .footer__left,
+  .footer__right {
+    flex-basis: 100%;
+  }
+}

@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Taviraj:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <title>Jiří Janík</title>
     <link rel>
-</head>
-<body class="body">
-  <div class="all-wrapper">
-  <header class="header">
-    
-    <div class="header__logo">
-      <img src="/photos/podpis.jpeg" alt="Podpis">
-    </div>
-    <nav class="nav-menu">
-      <ul class="nav-menu__list">
-        <li class="nav-menu__item"><a href="/">Úvod</a></li>
-        <li class="nav-menu__item"><a href="/galerie/">Galerie </a></li>
-        <li class="nav-menu__item"><a href="/o_me/">O mě</a></li>
-        <li class="nav-menu__item"><a href="/kontakt/">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
-    
-    {{ content | safe }}
+  </head>
+  <body class="body">
+    <div class="all-wrapper">
+      <header class="header">
 
-    <footer>
-      
-    </footer>
-    
-</body>
-</html>
+        <div class="header__logo">
+          <img src="/photos/podpis.jpeg" alt="Podpis">
+        </div>
+        <nav class="nav-menu">
+          <ul class="nav-menu__list">
+            <li class="nav-menu__item">
+              <a href="/">Úvod</a>
+            </li>
+            <li class="nav-menu__item">
+              <a href="/galerie/">Galerie </a>
+            </li>
+            <li class="nav-menu__item">
+              <a href="/o_me/">O mě</a>
+            </li>
+            <li class="nav-menu__item">
+              <a href="/kontakt/">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      {{ content | safe }}
+
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__left">
+            <p>&copy; 2023 Jiří Janík. Všechna práva vyhrazena.</p>
+          </div>
+          <div class="footer__right">
+            <p>Napište mi:</p>
+            <email>Email: info@example.com</email>
+            <tel>Telefon: +420 123 456 789</tel>
+          </div>
+        </div>
+      </footer>
+
+    </body>
+  </html>
