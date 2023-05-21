@@ -1,9 +1,17 @@
  $primary_background_color: white;
- $primary_font-size: 11px;
+ $primary_font-size: 7pt;
+ $secondary_font-size: 15pt;
  $primary_spacer: 1rem;
  $primary_box_shaodw: 6px 6px 20px 0px rgba(0,0,0,0.3);
  $primary_font_family:'Montserrat', sans-serif;
 
+ p{
+  font-size: $primary_font-size;
+ }
+h1{
+  font-size: $secondary_font-size;
+
+}
 .body {
   background-image: url(/photos/platno_vzorek_maly.jpg);
   margin: 0;
@@ -39,7 +47,6 @@
        height: auto;
        margin: auto;
      }
-
    }
 
    .nav-menu {
@@ -55,21 +62,50 @@
 
        &__item {
          margin: 0 10px;
+         
 
-         a {
+         &__link {
            text-decoration: none;
            color: #333333;
            padding: 10px;
+           position: relative;
+         }
+
+         &__link:hover::after {
+          opacity: 1;
+         }
+         &__link::after {
+          content: "";
+          background-image: url("/photos/podtrzitko.png/");
+          background-size: 100%;
+          height:5px;
+          width: 100%;
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+          left: 0;
+          opacity: 0;
+          transition: opacity 0.25s;
          }
        }
      }
    }
+   .nav-menu::before {
+    content: "";
+    background-image: url("/photos/podtrzitko.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+    width: 100%;
+    height: 20px;
+
+   } 
 
    @media screen and (min-width: 768px) {
      flex-direction: column;
 
      &__logo {
-       margin-bottom: 10px;
+       margin: 0px;
      }
 
      .nav-menu {
@@ -101,7 +137,7 @@
 
      &-img {
        width: 100%;
-       max-width: 400px;
+       max-width: 250px;
        height: auto;
      }
    }
@@ -111,7 +147,7 @@
      max-width: 400px;
 
      &-heading {
-       font-size: 2rem;
+       font-size: 12pt;
        font-weight: bold;
        margin-bottom: 0.5rem;
      }
@@ -132,17 +168,33 @@
    &__item {
      overflow: hidden;
      cursor: pointer;
+     position: relative;
 
      &-img {
        width: 100%;
        height: auto;
-       opacity: (0.5);
-       transition: opacity 0.3s;
+     }
+     &:hover &__caption{
+      opacity: 1;
+     }
+     &__caption{
+      width: calc(100% - 1em);
+      position: absolute;
+      bottom: 0px;
+      margin: 0;
+      padding-bottom: 1em;
+      padding-top: 50px;
+      padding-left: 1em;
+      color: white;
+      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+      background-size: 100%;
+
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.25s;
      }
 
-     &-img:hover {
-       opacity: (1);
-     }
+
    }
 
    // Responzivní styly
