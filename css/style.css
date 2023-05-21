@@ -1,18 +1,36 @@
+.body {
+  background-image: url(/photos/platno_vzorek_maly.jpg);
+  font-family: "Taviraj", serif;
+  font-size: 11px;
+  margin: 0;
+}
+
+.all-wrapper {
+  background-color: white;
+}
+@media screen and (min-width: 1024px) {
+  .all-wrapper {
+    width: 850px;
+    margin: auto;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f2f2f2;
+  background-color: white;
   padding: 10px;
 }
 .header__logo {
   display: flex;
-  align-items: center;
   margin-right: 10px;
 }
 .header__logo img {
-  max-width: 100px;
+  min-width: 100px;
+  max-width: 30%;
   height: auto;
+  margin: auto;
 }
 .header .nav-menu {
   display: flex;
@@ -33,7 +51,7 @@
   color: #333333;
   padding: 10px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .header {
     flex-direction: column;
   }
@@ -83,11 +101,20 @@
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 0.2em;
+}
+.gallery__item {
+  overflow: hidden;
+  cursor: pointer;
 }
 .gallery__item-img {
   width: 100%;
   height: auto;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.gallery__item-img:hover {
+  opacity: 1;
 }
 @media (max-width: 767px) {
   .gallery {
