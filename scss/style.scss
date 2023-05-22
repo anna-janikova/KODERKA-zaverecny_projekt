@@ -1,27 +1,37 @@
  $primary_background_color: white;
- $primary_font-size: 7pt;
- $secondary_font-size: 15pt;
+ $primary_font-size: 11px;
+ $secondary_font-size: 13px;
  $primary_spacer: 1rem;
- $primary_box_shaodw: 6px 6px 20px 0px rgba(0,0,0,0.3);
- $primary_font_family:'Montserrat', sans-serif;
+ $primary_box_shaodw: 6px 6px 20px 0px rgba(0, 0, 0, 0.3);
+ $primary_font_family: 'Montserrat', sans-serif;
 
- p{
-  font-size: $primary_font-size;
+ p {
+   font-size: $primary_font-size;
+   margin-left: $primary_spacer;
+   margin-right: $primary_spacer;
  }
-h1{
-  font-size: $secondary_font-size;
 
-}
-.body {
-  background-image: url(/photos/platno_vzorek_maly.jpg);
-  margin: 0;
-  font-family: $primary_font_family;
-}
+ h1 {
+   font-size: $secondary_font-size;
+   margin-left: $primary_spacer;
+ }
+
+ h2 {
+   font-size: $secondary_font-size;
+   margin-left: $primary_spacer;
+
+ }
+
+ .body {
+   background-image: url(/photos/platno_vzorek_maly.jpg);
+   margin: 0;
+   font-family: $primary_font_family;
+ }
+
  .all-wrapper {
-  background-color: $primary_background_color;
-  padding: $primary_spacer;
-  box-shadow: $primary_box_shaodw;
-  
+   background-color: $primary_background_color;
+   box-shadow: $primary_box_shaodw;
+
    @media screen and (min-width: 1024px) {
      width: 50%;
      margin: auto;
@@ -32,6 +42,7 @@ h1{
  //hlavička
  .header {
    display: flex;
+   flex-direction: column;
    align-items: center;
    justify-content: center;
    background-color: $primary_background_color;
@@ -40,29 +51,35 @@ h1{
    &__logo {
      display: flex;
      margin-right: 10px;
+     justify-content: center;
 
      img {
        min-width: 100px;
        max-width: 30%;
-       height: auto;
        margin: auto;
+
+       @media screen and (min-width: 768px) {
+         margin: $primary_spacer;
+       }
      }
    }
 
    .nav-menu {
      display: flex;
      justify-content: center;
-     flex-grow: 1;
+     font-size: $primary_font-size;
+    
 
      &__list {
        display: flex;
        list-style: none;
        padding: 0;
        margin: 0;
+       justify-content: space-between;
 
        &__item {
          margin: 0 10px;
-         
+
 
          &__link {
            text-decoration: none;
@@ -72,34 +89,36 @@ h1{
          }
 
          &__link:hover::after {
-          opacity: 1;
+           opacity: 1;
          }
+
          &__link::after {
-          content: "";
-          background-image: url("/photos/podtrzitko.png/");
-          background-size: 100%;
-          height:5px;
-          width: 100%;
-          position: absolute;
-          bottom: 5px;
-          right: 0;
-          left: 0;
-          opacity: 0;
-          transition: opacity 0.25s;
+           content: "";
+           background-image: url("/photos/podtrzitko.png/");
+           background-size: 100%;
+           height: 5px;
+           width: 100%;
+           position: absolute;
+           bottom: 5px;
+           right: 0;
+           left: 0;
+           opacity: 0;
+           transition: opacity 0.25s;
          }
        }
      }
    }
-   .nav-menu::before {
-    content: "";
-    background-image: url("/photos/podtrzitko.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    display: block;
-    width: 100%;
-    height: 20px;
 
-   } 
+   .nav-menu::before {
+     content: "";
+     background-image: url("/photos/podtrzitko.png");
+     background-repeat: no-repeat;
+     background-size: 100%;
+     display: block;
+     width: 100%;
+     height: 20px;
+
+   }
 
    @media screen and (min-width: 768px) {
      flex-direction: column;
@@ -134,17 +153,23 @@ h1{
 
    &__image {
      margin-bottom: 1rem;
+     
+     @media screen and (min-width: 768px){
+      width: 60%;
+      margin: auto;
+     }
 
      &-img {
        width: 100%;
-       max-width: 250px;
        height: auto;
+
+       
      }
    }
 
    &__content {
      text-align: center;
-     max-width: 400px;
+     width: 70%;
 
      &-heading {
        font-size: 12pt;
@@ -163,7 +188,7 @@ h1{
  .gallery {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-   grid-gap: 1%;
+   grid-gap: 5px;
 
    &__item {
      overflow: hidden;
@@ -174,24 +199,26 @@ h1{
        width: 100%;
        height: auto;
      }
-     &:hover &__caption{
-      opacity: 1;
-     }
-     &__caption{
-      width: calc(100% - 1em);
-      position: absolute;
-      bottom: 0px;
-      margin: 0;
-      padding-bottom: 1em;
-      padding-top: 50px;
-      padding-left: 1em;
-      color: white;
-      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-      background-size: 100%;
 
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.25s;
+     &:hover &__caption {
+       opacity: 1;
+     }
+
+     &__caption {
+       width: calc(100% - 1em);
+       position: absolute;
+       bottom: 0px;
+       margin: 0;
+       padding-bottom: 1em;
+       padding-top: 50px;
+       padding-left: 1em;
+       color: white;
+       background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+       background-size: 100%;
+
+       z-index: 2;
+       opacity: 0;
+       transition: opacity 0.25s;
      }
 
 
@@ -204,6 +231,8 @@ h1{
 
    @media (min-width: 768px) and (max-width: 1023px) {
      grid-template-columns: repeat(2, 1fr);
+     margin-right: $primary_spacer;
+     margin-left: $primary_spacer;
    }
 
    @media (min-width: 1024px) {
@@ -213,32 +242,39 @@ h1{
 
  //O mě
  .photo-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  
-  &__item {
-    flex-basis: calc(33.33% - 10px); /* Pro tři obrázky vedle sebe pro tablety */
-    margin-bottom: 20px;
-    
-    @media (max-width: 768px) { /* Pro mobilní zařízení */
-      flex-basis: 100%; /* Obrázky budou pod sebou */
-    }
-    
-    @media (min-width: 1024px) { /* Pro počítače */
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin: $primary_spacer;
 
-    }
-  }
-  
-  &__image {
-    width: 100%;
-  }
-}
+   &__item {
+     flex-basis: calc(33.33% - 10px);
+     /* Pro tři obrázky vedle sebe pro tablety */
+     margin-bottom: 20px;
+
+     @media (max-width: 768px) {
+       /* Pro mobilní zařízení */
+       flex-basis: 100%;
+       /* Obrázky budou pod sebou */
+     }
+
+     @media (min-width: 1024px) {
+       /* Pro počítače */
+
+     }
+   }
+
+   &__image {
+     width: 100%;
+   }
+ }
 
  //Formulář
  .form {
    display: flex;
    flex-direction: column;
+   margin: $primary_spacer;
+
  }
 
  .form__row {
@@ -258,7 +294,8 @@ h1{
 
  .form__button {
    padding: 10px 20px;
-   background-color: #007bff;
+   background-color: #000000;
+   font-family: $primary_font_family;
    color: #fff;
    border: none;
    border-radius: 4px;
@@ -282,28 +319,26 @@ h1{
 
  //Patička
  .footer {
-  background-image: url("/photos/paticka.jpg");
-  color:white;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 20px;
-}
+   background-image: url("/photos/paticka.jpg");
+   color: white;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   width: auto;
+   padding: 50px;
 
-.footer__content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+ }
 
-.footer__left,
-.footer__right {
-  flex-basis: 50%;
-}
+ .footer__content {
+   display: flex;
+   justify-content: center
+ }
 
-@media (max-width: 768px) {
-  .footer__left,
-  .footer__right {
-    flex-basis: 100%;
-  }
-}
+
+ @media (max-width: 768px) {
+
+   .footer__left,
+   .footer__right {
+     flex-basis: 100%;
+   }
+ }

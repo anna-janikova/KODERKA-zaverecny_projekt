@@ -1,10 +1,18 @@
 @charset "UTF-8";
 p {
-  font-size: 7pt;
+  font-size: 11px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 h1 {
-  font-size: 15pt;
+  font-size: 13px;
+  margin-left: 1rem;
+}
+
+h2 {
+  font-size: 13px;
+  margin-left: 1rem;
 }
 
 .body {
@@ -15,7 +23,6 @@ h1 {
 
 .all-wrapper {
   background-color: white;
-  padding: 1rem;
   box-shadow: 6px 6px 20px 0px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 1024px) {
@@ -27,6 +34,7 @@ h1 {
 
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -35,23 +43,29 @@ h1 {
 .header__logo {
   display: flex;
   margin-right: 10px;
+  justify-content: center;
 }
 .header__logo img {
   min-width: 100px;
   max-width: 30%;
-  height: auto;
   margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .header__logo img {
+    margin: 1rem;
+  }
 }
 .header .nav-menu {
   display: flex;
   justify-content: center;
-  flex-grow: 1;
+  font-size: 11px;
 }
 .header .nav-menu__list {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: space-between;
 }
 .header .nav-menu__list__item {
   margin: 0 10px;
@@ -115,14 +129,19 @@ h1 {
 .main__image {
   margin-bottom: 1rem;
 }
+@media screen and (min-width: 768px) {
+  .main__image {
+    width: 60%;
+    margin: auto;
+  }
+}
 .main__image-img {
   width: 100%;
-  max-width: 250px;
   height: auto;
 }
 .main__content {
   text-align: center;
-  max-width: 400px;
+  width: 70%;
 }
 .main__content-heading {
   font-size: 12pt;
@@ -137,7 +156,7 @@ h1 {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 1%;
+  grid-gap: 5px;
 }
 .gallery__item {
   overflow: hidden;
@@ -174,6 +193,8 @@ h1 {
 @media (min-width: 768px) and (max-width: 1023px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 }
 @media (min-width: 1024px) {
@@ -186,18 +207,24 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 1rem;
 }
 .photo-gallery__item {
-  flex-basis: calc(33.33% - 10px); /* Pro tři obrázky vedle sebe pro tablety */
+  flex-basis: calc(33.33% - 10px);
+  /* Pro tři obrázky vedle sebe pro tablety */
   margin-bottom: 20px;
 }
 @media (max-width: 768px) {
-  .photo-gallery__item { /* Pro mobilní zařízení */
-    flex-basis: 100%; /* Obrázky budou pod sebou */
+  .photo-gallery__item {
+    /* Pro mobilní zařízení */
+    flex-basis: 100%;
+    /* Obrázky budou pod sebou */
   }
 }
 @media (min-width: 1024px) {
-  .photo-gallery__item { /* Pro počítače */ }
+  .photo-gallery__item {
+    /* Pro počítače */
+  }
 }
 .photo-gallery__image {
   width: 100%;
@@ -206,6 +233,7 @@ h1 {
 .form {
   display: flex;
   flex-direction: column;
+  margin: 1rem;
 }
 
 .form__row {
@@ -225,7 +253,8 @@ h1 {
 
 .form__button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #000000;
+  font-family: "Montserrat", sans-serif;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -247,21 +276,16 @@ h1 {
 .footer {
   background-image: url("/photos/paticka.jpg");
   color: white;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 20px;
+  width: auto;
+  padding: 50px;
 }
 
 .footer__content {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.footer__left,
-.footer__right {
-  flex-basis: 50%;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
