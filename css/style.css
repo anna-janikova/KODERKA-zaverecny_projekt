@@ -151,7 +151,13 @@ h3 {
 }
 .main__content {
   text-align: center;
-  width: 60%;
+  width: 90%;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .main__content {
+    width: 60%;
+  }
 }
 .main__content-heading {
   font-size: 12pt;
@@ -225,10 +231,18 @@ h3 {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  transition: opacity 0.25s;
+}
+.photo-gallery__item:hover {
+  opacity: 0.5;
+}
+.photo-gallery__item:hover .photo-gallery__item__caption {
+  opacity: 1;
 }
 .photo-gallery__item__caption {
   position: absolute;
   text-align: center;
+  opacity: 0;
 }
 @media (min-width: 768px) {
   .photo-gallery__item {
@@ -278,13 +292,14 @@ h3 {
 }
 
 .footer {
-  background-image: url("/photos/paticka.jpg");
+  background-color: black;
   color: white;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: auto;
   padding: 50px;
+  text-shadow: #000000;
 }
 
 .footer__content {

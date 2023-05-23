@@ -178,7 +178,12 @@
 
    &__content {
      text-align: center;
-     width: 60%;
+     width: 90%;
+     margin-bottom: $primary_spacer;
+
+     @media screen and (min-width: 768px){
+      width: 60%;
+     }
 
      &-heading {
        font-size: 12pt;
@@ -254,7 +259,6 @@
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
-   margin: $primary_spacer;
 
    &__item {
      position: relative;
@@ -262,13 +266,25 @@
      align-items: center;
      justify-content: center;
      margin-bottom: 20px;
+     transition: opacity 0.25s;
 
-     &__caption {
-       position: absolute;
-       text-align: center;
-
-
+   
+    &:hover {
+      opacity: 0.5;
      }
+    &:hover &__caption  {
+      opacity: 1;
+     }
+
+    &__caption {
+      position: absolute;
+      text-align: center;
+      opacity:0; 
+      color:black
+      transition: opacity 0.25s;
+     }
+
+ 
 
      @media (min-width: 768px) {
        flex-basis: calc(33.33% - 10px);
@@ -324,13 +340,14 @@
 
  //Patička
  .footer {
-   background-image: url("/photos/paticka.jpg");
+   background-color:black;
    color: white;
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
    width: auto;
    padding: 50px;
+   text-shadow: #000000;
 
  }
 
