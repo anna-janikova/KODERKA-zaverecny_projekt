@@ -181,8 +181,8 @@
      width: 90%;
      margin-bottom: $primary_spacer;
 
-     @media screen and (min-width: 768px){
-      width: 60%;
+     @media screen and (min-width: 768px) {
+       width: 60%;
      }
 
      &-heading {
@@ -204,6 +204,7 @@
    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
    grid-gap: 5px;
 
+
    &__item {
      overflow: hidden;
      cursor: pointer;
@@ -211,7 +212,7 @@
 
      &-img {
        width: 100%;
-       height: auto;
+       height: 100%;
      }
 
      &:hover &__caption {
@@ -255,6 +256,23 @@
  }
 
  //O mě
+ .gallery-title {
+   margin-bottom: $primary_spacer;
+ }
+
+ img.photo-gallery__image {
+   transition: opacity 0.25s;
+
+ }
+
+ img.photo-gallery__image:hover {
+   opacity: 0.3;
+ }
+
+ .photo-gallery__item:has(.photo-gallery__item__caption:hover) img {
+   opacity: 0.3
+ }
+
  .photo-gallery {
    display: flex;
    flex-wrap: wrap;
@@ -266,25 +284,21 @@
      align-items: center;
      justify-content: center;
      margin-bottom: 20px;
-     transition: opacity 0.25s;
 
-   
-    &:hover {
-      opacity: 0.5;
-     }
-    &:hover &__caption  {
-      opacity: 1;
+
+     &:hover &__caption {
+       opacity: 1;
      }
 
-    &__caption {
-      position: absolute;
-      text-align: center;
-      opacity:0; 
-      color:black
-      transition: opacity 0.25s;
+     &__caption {
+       position: absolute;
+       text-align: center;
+       opacity: 0;
+       color: black;
+       transition: opacity 0.25s;
      }
 
- 
+
 
      @media (min-width: 768px) {
        flex-basis: calc(33.33% - 10px);
@@ -340,7 +354,7 @@
 
  //Patička
  .footer {
-   background-color:black;
+   background-color: black;
    color: white;
    background-size: contain;
    background-repeat: no-repeat;
@@ -366,15 +380,16 @@
    &__picture {
      width: 100%;
 
+     
      @media screen and (min-width: 768px) {
        width: 60%;
-     }
-   }
-
-   &__title {
-     padding-bottom: $primary_spacer;
-   }
-
+      }
+    }
+    
+    &__title {
+      padding-bottom: $primary_spacer;
+    }
+    
    .wrapper {
      width: 100%;
      text-align: center;
@@ -391,18 +406,32 @@
  .form {
    font-size: $primary_font-size;
 
+   &__row__line {
+     width: 40%;
+
+
+   }
+
    &__input {
      outline: none;
      border: none;
+     font-family: $primary_font_family;
+     font-size: $primary_font-size;
+
    }
 
-   &__input::after{
+   &__row__line::after {
      content: "";
      background-image: url("/photos/podtrzitko.png");
      background-repeat: no-repeat;
      background-size: 100%;
      display: block;
-     width: 100%;
+     width: 120%;
      height: 20px;
+   }
+   &__row__textarea{
+    height: 100px;
+     font-family: $primary_font_family;
+     font-size: $primary_font-size;
    }
  }

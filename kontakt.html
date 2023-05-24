@@ -3,28 +3,33 @@ layout: basic_template.njk
 title: kontakt
 ---
 <form class="form">
-    <div class="form__row">
-      <label class="form__row__label" for="name">Jméno:</label>
+  <div class="form__row">
+    <label class="form__row__label" for="name">Jméno:</label>
+    <div class="form__row__line">
       <input class="form__input" type="text" id="name" name="name" placeholder="Zadejte jméno" required>
     </div>
-  
-    <div class="form__row">
-      <label class="form__row__label" for="email">Email:</label>
+  </div>
+
+  <div class="form__row">
+    <label class="form__row__label" for="email">Email:</label>
+    <div class="form__row__line">
       <input class="form__input" type="email" id="email" name="email" placeholder="Zadejte email" required>
     </div>
-  
-    <div class="form__row">
-      <label class="form__row__label" for="phone">Telefonní číslo:</label>
+  </div>
+
+  <div class="form__row">
+    <label class="form__row__label" for="phone">Telefonní číslo:</label>
+    <div class="form__row__line">
       <input class="form__input" type="tel" id="phone" name="phone" placeholder="Zadejte telefonní číslo" required>
     </div>
-  
-    <div class="form__row">
-      <label class="form__row__label" for="message">Vzkaz:</label>
-      <textarea class="form__row__textarea" id="message" name="message" placeholder="Zadejte vzkaz" required></textarea>
-    </div>
-  
-    <div class="form__row">
-      <button class="form__button" type="submit">Odeslat</button>
-    </div>
-  </form>
-  
+  </div>
+
+  <div class="form__row">
+    <label class="form__row__label" for="message">Vzkaz:</label>
+    <textarea class="form__row__textarea" id="message" name="message" placeholder="Zadejte vzkaz" required></textarea>
+  </div>
+
+  <div class="form__row">
+    <button class="form__button" type="submit">Odeslat</button>
+  </div>
+</form>

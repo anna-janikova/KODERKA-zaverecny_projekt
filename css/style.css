@@ -181,7 +181,7 @@ h3 {
 }
 .gallery__item-img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .gallery__item:hover .gallery__item__caption {
   opacity: 1;
@@ -219,11 +219,26 @@ h3 {
   }
 }
 
+.gallery-title {
+  margin-bottom: 1rem;
+}
+
+img.photo-gallery__image {
+  transition: opacity 0.25s;
+}
+
+img.photo-gallery__image:hover {
+  opacity: 0.3;
+}
+
+.photo-gallery__item:has(.photo-gallery__item__caption:hover) img {
+  opacity: 0.3;
+}
+
 .photo-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 1rem;
 }
 .photo-gallery__item {
   position: relative;
@@ -231,10 +246,6 @@ h3 {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  transition: opacity 0.25s;
-}
-.photo-gallery__item:hover {
-  opacity: 0.5;
 }
 .photo-gallery__item:hover .photo-gallery__item__caption {
   opacity: 1;
@@ -243,6 +254,8 @@ h3 {
   position: absolute;
   text-align: center;
   opacity: 0;
+  color: black;
+  transition: opacity 0.25s;
 }
 @media (min-width: 768px) {
   .photo-gallery__item {
@@ -337,16 +350,26 @@ h3 {
 .form {
   font-size: 11px;
 }
+.form__row__line {
+  width: 40%;
+}
 .form__input {
   outline: none;
   border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
 }
-.form__input::after {
+.form__row__line::after {
   content: "";
   background-image: url("/photos/podtrzitko.png");
   background-repeat: no-repeat;
   background-size: 100%;
   display: block;
-  width: 100%;
+  width: 120%;
   height: 20px;
+}
+.form__row__textarea {
+  height: 100px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
 }
