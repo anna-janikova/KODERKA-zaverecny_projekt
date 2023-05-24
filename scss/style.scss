@@ -4,6 +4,7 @@
  $primary_spacer: 1rem;
  $primary_box_shaodw: 6px 6px 20px 0px rgba(0, 0, 0, 0.3);
  $primary_font_family: 'Montserrat', sans-serif;
+ $primary-text-color:#555;
 
  p {
    font-size: $primary_font-size;
@@ -153,6 +154,15 @@
 
 
  /*index - main section*/
+ .main a {
+  text-decoration: none;
+  font-weight: 700;
+  color: $primary-text-color;
+
+  &:visited {
+    color: rgb(122, 31, 122);
+  }
+ }
 
  .main {
    display: flex;
@@ -192,7 +202,7 @@
      }
 
      &-text {
-       color: #555;
+       color: $primary-text-color
      }
    }
  }

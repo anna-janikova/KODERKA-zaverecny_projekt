@@ -130,6 +130,15 @@ h3 {
 }
 
 /*index - main section*/
+.main a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #555;
+}
+.main a:visited {
+  color: rgb(122, 31, 122);
+}
+
 .main {
   display: flex;
   align-items: center;
