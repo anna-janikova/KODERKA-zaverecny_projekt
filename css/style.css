@@ -373,7 +373,7 @@ img.photo-gallery__image:hover {
   height: 20px;
 }
 .form__row__textarea {
-  height: 100px;
+  height: 200px;
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
 }
