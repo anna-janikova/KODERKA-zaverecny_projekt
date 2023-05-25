@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/detaily_obrazu/*"
+  to = "/detaily_obrazu/:splat"
+  status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
