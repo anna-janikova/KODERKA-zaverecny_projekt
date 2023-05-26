@@ -1,24 +1,24 @@
 @charset "UTF-8";
 p {
-  font-size: 11px;
+  font-size: 13pt;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
 h1 {
-  font-size: 13px;
+  font-size: 15pt;
   margin-left: 1rem;
   margin-bottom: 0;
 }
 
 h2 {
-  font-size: 11px;
+  font-size: 13pt;
   margin-left: 1rem;
   margin-bottom: 0;
 }
 
 h3 {
-  font-size: 11px;
+  font-size: 13pt;
   margin-left: 1rem;
   margin-bottom: 0;
   margin-top: 0;
@@ -32,7 +32,7 @@ h3 {
 
 .all-wrapper {
   background-color: white;
-  box-shadow: 6px 6px 20px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 6px 6px 20px 0px rgba(196, 93, 93, 0.3);
 }
 @media screen and (min-width: 1024px) {
   .all-wrapper {
@@ -61,7 +61,7 @@ h3 {
 }
 
 .nav-menu {
-  font-size: 11px;
+  font-size: 13pt;
 }
 .nav-menu__list {
   display: flex;
@@ -363,7 +363,7 @@ img.photo-gallery__image:hover {
 }
 
 .form {
-  font-size: 11px;
+  font-size: 13pt;
 }
 .form__row__line {
   width: 40%;
@@ -372,7 +372,7 @@ img.photo-gallery__image:hover {
   outline: none;
   border: none;
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 13pt;
 }
 .form__row__line::after {
   content: "";
@@ -386,5 +386,5 @@ img.photo-gallery__image:hover {
 .form__row__textarea {
   height: 200px;
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 13pt;
 }
