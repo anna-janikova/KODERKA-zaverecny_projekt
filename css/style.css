@@ -76,9 +76,14 @@ h3 {
 .nav-menu__list__item__link {
   text-decoration: none;
   color: #333333;
-  padding: 8px;
+  padding: 6px;
   position: relative;
   display: inline-block;
+}
+@media screen and (min-width: 768px) {
+  .nav-menu__list__item__link {
+    padding: 8px;
+  }
 }
 .nav-menu__list__item__link:hover::after {
   opacity: 1;
